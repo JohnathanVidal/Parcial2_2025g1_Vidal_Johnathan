@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    color: #222;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hero {
+    background: var(--bg-hero);
+    padding: 4rem 0;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.hero h1,.hero p {
+    color: #ffffff;
+}
+
+.card {
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #747474;
+    color: #ffffff;
+    box-shadow: 0 15px 25px rgba(0, 123, 255, 0.7);
+}
+
+/* Formularios */
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+}
+
+/* Imágenes de tarjetas adaptables */
+.card-img-top {
+    object-fit: cover;
+    height: 160px;
+}
+
+/* Footer */
+footer a {
+    text-decoration: none;
+    color: inherit;
+    opacity: .9;
+}
+
+.navbar-brand {
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #fff !important;
+    transform: scale(1.1);
+    animation: flash 1s;
+}
+
+:root {
+    --primary: #0d6efd;
+    --bg-hero: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(0, 123, 255, 0.8));
+    --card-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
