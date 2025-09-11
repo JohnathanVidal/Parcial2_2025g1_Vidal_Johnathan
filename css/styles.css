@@ -5,38 +5,84 @@
 body {
     margin: 0;
     color: #222;
-    background: #fff;
-    -webkit-font-smoothing: antialiased;
+    background: #ffffff;
 }
 
-.hero {
-    background: var(--bg-hero);
-    padding: 4rem 0;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-}
-
-.hero h1,.hero p {
+/* NAV */
+.brand-white {
     color: #ffffff;
+    /* blanco */
 }
+
+.brand-vino {
+    color: #f70000;
+    /* vinotinto */
+}
+
+.btn:hover {
+    transform: scale(1.15);
+}
+
+.navbar-brand {
+    transition: all 0.2s ease-in-out;
+}
+
+/* hay que poner el important ya que se está usando  */
+.navbar-brand:hover {
+    transform: scale(1.2);
+    animation: flash 1s;
+}
+
+.brand-vino:hover {
+    color: #4aff2a !important;
+}
+
+
+/* HERO */
+
+
+/* .hero h1,
+.hero p {
+    color: #ffffff;
+} */
+.hero-custom {
+    background: linear-gradient(135deg, #1a1a1a, #646363, #000000);
+    /* negro → gris oscuro */
+    color: #ffffff;
+    /* texto blanco para contraste */
+}
+
+/* CARDS */
 
 .card {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.05);
-    background-color: #747474;
-    color: #ffffff;
-    box-shadow: 0 15px 25px rgba(0, 123, 255, 0.7);
+    /* background-color: #7e7e7e; */
+    background: rgba(255, 255, 255, 0.15);
+    color: #000000;
+    box-shadow: 0 0 20px 5px rgba(120, 120, 120, 0.347);
 }
 
-/* Formularios */
-input:focus,
+.card-body {
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+        background-color: #7e7e7e;
+        color: #ffffff;
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* FORMULARIO */
+/* input:focus,
 textarea:focus {
     outline: none;
     box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
-}
+} */
 
 /* Imágenes de tarjetas adaptables */
 .card-img-top {
@@ -51,15 +97,6 @@ footer a {
     opacity: .9;
 }
 
-.navbar-brand {
-    transition: all 0.3s ease-in-out;
-}
-
-.navbar-brand:hover {
-    color: #fff !important;
-    transform: scale(1.1);
-    animation: flash 1s;
-}
 
 :root {
     --primary: #0d6efd;
