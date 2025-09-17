@@ -1,31 +1,47 @@
 * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box
 }
 
 body {
     margin: 0;
-    color: #222;
+    color: #212121;
     background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* PORTAFOLIO */
+.fondo_portafolio {
+    background: linear-gradient(135deg, #9c9c9c, #1f1f1f, #1f1f1f, #9c9c9c);
 }
 
 /* TITULOS CON FONDO TRASLUCIDO */
-.titulo-transparente-fijo {
-    background-color: rgba(172, 169, 169, 0.37);
+.titulo-transparente {
+    background-color: rgba(63, 63, 63, 0.348);
     backdrop-filter: blur(6px);
-    position: sticky;
     top: 70px;
-    z-index: 1020; /* para estar encima del contenido */
+    width: 95%;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 10px 5px rgba(65, 64, 64, 0.6);
+    /* ajustado para que el contenido respire */
+}
+
+.titulo-transparente:hover{
+    background-color: rgba(130, 130, 130, 0.267);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 5px rgba(253, 253, 253, 0.6);
 }
 
 /* NAV */
-.brand-white {
+.texto-blanco {
     color: #ffffff;
-    /* blanco */
 }
 
-.brand-vino {
-    color: #f70000;
-    /* vinotinto */
+.texto-rojo {
+    color: #ff0000;
 }
 
 .btn:hover {
@@ -36,80 +52,248 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-/* hay que poner el important ya que se está usando  */
 .navbar-brand:hover {
     transform: scale(1.2);
     animation: flash 1s;
 }
 
-.brand-vino:hover {
-    color: #4aff2a !important;
+/* hay que poner el important ya que se está usando bootstrap */
+.color_hub {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.color_hub:hover {
+    transform: scale(1.09);
+}
 
-/* HERO */
+.color_hub:hover .texto-blanco {
+    color: #000000 !important;
+    text-shadow: 0 0 3px #ffffff;
+}
 
+.color_hub:hover .texto-rojo {
+    color: #ff9900 !important;
+    text-shadow: 0 0 3px #ffffff;
+}
 
-/* .hero h1,
-.hero p {
-    color: #ffffff;
-} */
-.hero-custom {
+/* HEADER */
+.header {
     background: linear-gradient(135deg, #1a1a1a, #646363, #000000);
-    /* negro → gris oscuro */
     color: #ffffff;
-    /* texto blanco para contraste */
 }
 
 /* CARDS */
+.color_icono_card{
+    color: blue;
+}
+
+.card-body:hover .color_icono_card{
+    color: red;
+}
 
 .card {
     transition: all 0.25s ease-in-out;
+    color: #494848;
 }
 
 .card:hover {
     transform: scale(1.05);
-    /* background-color: #7e7e7e; */
     background: rgba(255, 255, 255, 0.15);
-    color: #000000;
+    color: #353434;
     box-shadow: 0 0 20px 5px rgba(120, 120, 120, 0.347);
 }
 
-.card-body {
-    transition: all 0.25s ease-in-out;
-
-    &:hover {
-        transform: scale(1.05);
-        background-color: #7e7e7e;
-        color: #ffffff;
-        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
-    }
-}
-
-/* FORMULARIO */
-/* input:focus,
-textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
-} */
-
-/* Imágenes de tarjetas adaptables */
 .card-img-top {
     object-fit: cover;
     height: 160px;
 }
 
-/* Footer */
-footer a {
-    text-decoration: none;
-    color: inherit;
-    opacity: .9;
+
+.card-body {
+    max-width: 450px;
+    max-width: 450px;
+    transition: all 0.25s ease-in-out;
+    padding: 1.5rem;
+    color: white;
+    /* ajustado para que el contenido no quede pegado */
 }
 
+.card-body:hover {
+    transform: scale(1.025);
+    background-color: #7e7e7e;
+    color: #ffffff;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
+}
 
-:root {
-    --primary: #0d6efd;
-    --bg-hero: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(0, 123, 255, 0.8));
-    --card-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+/* FORMULARIO */
+input:invalid,
+textarea:invalid {
+    border-color: #be0114;
+}
+
+input:valid,
+textarea:valid {
+    border-color: #01ac31;
+}
+
+/* Formulario con efecto vidrio */
+.formulario-contacto {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover con un toque de realce */
+.formulario-contacto:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* MAPA */
+.mapa-contenedor iframe {
+    transition: all 0.25s ease-in-out;
+    filter: grayscale(100%) opacity(0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.mapa-contenedor:hover iframe {
+    transform: scale(1.05);
+    filter: grayscale(50%) saturate(2) opacity(1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.592);
+}
+
+/* Footer */
+.fondo_footer {
+    background-color: #000000;
+    opacity: 0.7;
+}
+
+.fondo_footer:hover {
+    opacity: 1;
+}
+
+footer a {
+    text-decoration: none;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.facebook {
+    color: #1877F2;
+    filter: saturate(1.4);
+}
+
+.twitter {
+    color: #1DA1F2;
+    filter: saturate(1.4);
+}
+
+.instagram {
+    color: #E4405F;
+    filter: brightness(1.4) saturate(1.4);
+}
+
+.linkedin {
+    color: #0A66C2;
+    filter: brightness(1.4) saturate(1.4);
+}
+
+.github {
+    color: #4c4b4b;
+    filter: brightness(1.4) saturate(1.4);
+}
+
+/* NOSOTROS */
+.fondo_nosotros {
+    background-color: #000000;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* ajustado para que el contenido respire */
+}
+
+.fondo_valores {
+    background-color: #575757c0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* ajustado para que el contenido respire */
+}
+
+/* === Misión, Visión y Valores === */
+.card.bg-dark {
+    width: 350px;
+    height: 200px;
+    background: rgba(20, 20, 20, 0.85);
+    color: #d1d1d1;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.card.bg-dark:hover {
+    transform: scale(1.02);
+    background: rgba(38, 37, 37, 0.08);
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
+}
+
+/* Íconos en las cards */
+.card.bg-dark i {
+    transition: all 0.3s ease-in-out;
+}
+
+.card.bg-dark:hover i {
+    color: #ff0000 !important;
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* === Equipo de trabajo === */
+.fondo_equipo {
+    background-color: #151515;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* ajustado para que el contenido respire */
+}
+
+.equipo-card {
+    background: rgba(20, 20, 20, 0.85);
+    color: #dcdcdc;
+    border-radius: 15px;
+    transition: all 0.35s ease-in-out;
+}
+
+.equipo-card:hover {
+    transform: scale(1.04);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.equipo-card img {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.35s ease-in-out;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.25);
+}
+
+.equipo-card:hover img {
+    border-color: #2638ff;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* Ajuste general: reducir margenes entre secciones */
+section {
+    margin-bottom: 0;
+    /* elimina huecos grandes */
 }
